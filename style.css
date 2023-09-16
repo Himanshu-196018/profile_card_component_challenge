@@ -9,8 +9,11 @@ body {
   width: 100%;
   min-height: 100vh;
   font-family: "Khumbh-Sans", sans-serif;
-  background: hsl(185, 75%, 39%) url("images/bg-pattern-top.svg") no-repeat 125%
-    190%;
+  background-color: hsl(185, 75%, 39%);
+  background-image: url("images/bg-pattern-top.svg"),
+    url("images/bg-pattern-bottom.svg");
+  background-repeat: no-repeat;
+  background-position: -800px -528px, 112px 340px;
   font-size: 14px;
   /* sass */
   display: grid;
@@ -26,26 +29,38 @@ body {
   border-radius: 12px;
   background-color: white;
   color: hsl(227, 10%, 46%);
+  box-shadow: 0 0 4px rgb(200, 200, 200);
   /* sass */
   display: grid;
   justify-content: center;
   align-content: space-between;
 }
-.cover {
-  width: inherit;
-  height: 150px;
+
+.profile {
+  padding-bottom: 24px;
+  height: 295px;
   background: url("images/bg-pattern-card.svg") no-repeat;
   border-radius: 12px 12px 0 0;
-}
-.profile {
-  height: calc(225px - 88px);
   text-align: center;
+  position: relative;
+  display: grid;
+  align-content: flex-end;
 }
 .profile img {
   border: 6px solid white;
   border-radius: 50%;
   position: absolute;
+  top: 85px;
+  justify-self: center;
 }
+.info {
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+.age {
+  margin-left: 10px;
+}
+
 .details {
   padding: 0 30px;
   width: inherit;
@@ -73,4 +88,21 @@ body {
   font-size: 20px;
   font-weight: 700;
   color: hsl(229, 23%, 23%);
+}
+
+@media screen and (min-width: 500px) {
+  body {
+    background-position: -300px -500px, 600px 370px;
+  }
+  .card {
+    width: 348px;
+  }
+}
+
+footer {
+  margin: 10px 0;
+  font-size: 12px;
+  position: absolute;
+  justify-self: center;
+  align-self: flex-end;
 }
